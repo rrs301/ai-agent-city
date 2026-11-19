@@ -73,7 +73,7 @@ Headquarters tests cover architecture/height/tint/spire combinations, palettes, 
 - Camera and ground grid have initial fixed bounds. Large cities need fit-to-content controls or expanded navigation.
 - Reset view restores the initial camera; it does not recover a moved headquarters automatically.
 - The renderer is legacy JavaScript behind a typed declaration. New geometry needs runtime/browser verification as well as type checks.
-- There are no persistence, authentication, billing, job processing, or deployment features wired into the city.
+- There are no persistence, billing, job processing, or deployment features wired into the city. App-level sign-in is described in [authentication.md](authentication.md).
 
 ## Documentation assets
 

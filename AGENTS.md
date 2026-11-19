@@ -2,13 +2,14 @@
 
 ## Start here
 
-This is a Next.js App Router / React / TypeScript boilerplate for a visual AI agent workspace. Read `README.md`, then `docs/architecture.md` and the relevant component guide before changing behavior. The example is local-only: there is no AI execution, persistence, authentication, or backend configured.
+This is a Next.js App Router / React / TypeScript boilerplate for a visual AI agent workspace. Read `README.md`, then `docs/architecture.md` and the relevant component guide before changing behavior. There is no AI execution or city persistence. Authentication uses CloudHike.dev, and new users are saved to the Strapi Users collection. See `docs/authentication.md`.
 
-Use npm and the committed `package-lock.json`. `.nvmrc` selects Node 22; the package engine requires Node >=20.9.0. Run `npm ci` for a fresh checkout. No environment variables are required for the example. Preserve local `.env*` files and never print credentials.
+Use npm and the committed `package-lock.json`. `.nvmrc` selects Node 22; the package engine requires Node >=20.9.0. Run `npm ci` for a fresh checkout. The city example needs no environment variables. Auth routes need the variables listed in `docs/authentication.md`. Preserve local `.env*` files and never print credentials.
 
 ## Project boundaries
 
-- `app/page.tsx` shows the documentation illustration gallery from `docs/assets`. This is the only application route.
+- `app/page.tsx` shows the documentation illustration gallery from `docs/assets`.
+- `app/(auth)/` holds `/sign-in` and `/sign-up`, `app/auth/callback` and `app/api/auth/session` finish Google sign-in, and `app/dashboard` is an intentionally empty, signed-in-only page. `lib/auth.ts` and `lib/strapi-users.ts` are server-only.
 - `docs/integration.md` provides a complete interactive workspace example. When adding a workspace, its host owns data, creation/removal, and headquarters rules.
 - `components/agent-city/index.ts` is the public component/type/helper API. Import it from application code.
 - `components/agent-city/types.ts` defines serializable agents, buildings, and links.

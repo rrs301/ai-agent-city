@@ -13,7 +13,7 @@ npm ci
 npm run dev
 ```
 
-Open [localhost:3000](http://localhost:3000). The homepage `/` shows the illustrations from `docs/assets`. No database, API key, or environment variables are required. `.env.example` is a safe template for settings you add later.
+Open [localhost:3000](http://localhost:3000). The homepage `/` shows the illustrations from `docs/assets`. The city needs no environment variables. `/sign-in`, `/sign-up` and `/dashboard` need the CloudHike and Strapi settings from [Authentication](docs/authentication.md). `.env.example` lists them without values.
 
 ## What is included
 
@@ -24,7 +24,7 @@ Open [localhost:3000](http://localhost:3000). The homepage `/` shows the illustr
 - Working lint, type-check, test, and production build commands.
 - [AGENTS.md](AGENTS.md) and [CLAUDE.md](CLAUDE.md) for AI-assisted development.
 
-This starter includes PostgreSQL/Drizzle scaffolding, Tailwind CSS, and Lucide icons alongside the city UI. AI execution, storage, authentication, and server integrations are extension points, not configured services.
+This starter includes PostgreSQL/Drizzle scaffolding, Tailwind CSS, and Lucide icons alongside the city UI. Authentication (CloudHike.dev, with users saved to Strapi) is wired up. AI execution, city storage, and other server integrations are extension points.
 
 ## Use the starter
 
@@ -53,6 +53,7 @@ The host owns agents, city configuration, selection, and persistence. Components
 | [Headquarters](docs/headquarters.md) | Illustrated Empire, Crown, and Twin designs |
 | [Architecture](docs/architecture.md) | State ownership, creation flow, coordinates, and invariants |
 | [Customization](docs/customization.md) | Templates, palettes, roads, styles, and layout |
+| [Authentication](docs/authentication.md) | Sign-in/sign-up, Google, sessions, Strapi users |
 | [Extending the starter](docs/extending.md) | Persistence, AI execution, verification, and current limits |
 
 ## Project layout
